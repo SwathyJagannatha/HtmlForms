@@ -1,0 +1,94 @@
+<!-- Task 1: Creating a Selection Experience
+Now let's add some different selection features to your form to spice things up.
+Include a select menu that allows users to choose their favorite programming language from a list of options.
+Implement a set of radio buttons for users to indicate their level of expertise (beginner, intermediate, advanced).
+Add checkboxes to let users select their preferred development platforms (web, mobile, desktop).
+
+Task 2: Improving Accessibility
+
+Ensure that all form elements have associated labels using the for attribute.
+Implement ARIA attributes to enhance accessibility for users with disabilities.
+Test the form with screen readers to verify that it provides a user-friendly experience.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Form implementation</title>
+</head>
+<body>
+    <form>
+        <!-- Email input implementation -->
+        <label for="user-email">Email Address:</label>
+        <input type="email" id="user-email" name="user-email" placeholder="Please Enter your email:" pattern="[a-z0-9._%+-]+.com" minlength="6" maxlength="50" aria-required="true" aria-label="Email Address"/>
+        <button type="submit">Submit</button>
+        <br>
+        <hr/>
+
+        <!-- Implementing an input for quantity as an number -->
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" placeholder="Hello,Please enter the quantity!!" min="1" max="12" step="2" aria-required="true"
+        aria-label="Quantity">
+
+        <!-- Taking a date input -->
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" placeholder="Please enter a Date value" required  min="2024-01-01" max="2024-12-31" >
+        <p>
+            Accepted Range for Date is : Jan 1, 2024 to December 31,2024
+        </p>
+
+        <!-- Range input example -->
+        <label for="rating">Rating:</label>
+        <input type="range" id="rating" name="rating" placeholder="Please enter a range value(1-10)" requried min="1" max="10" aria-label="Rating">
+
+        <!-- Capturing Color with Color Input-->
+         
+        <label for="favcolor">Select your favorite color:</label>
+        <input type="color" id="favcolor" name="favcolor" placeholder="Select your favourite colour" value="#ff0000" aria-label="Favourite Color">
+
+        <label for="programming lang">Select your favourite programming lang</label> 
+        <div class="custom-select" style="width:200px;" aria-label="programming lang"></div>
+        <select>
+            <option value="0">Select Your Favourite programming language</option>
+            <option value="1">Python </option>
+            <option value="2">Java </option>
+            <option value="3">C++ </option>
+            <option value="4">Ruby on Rails </option>
+            <option value="5">Scala </option>
+            <option value="6">Golang </option>
+            <option value="7">HTML,CSS,JavaScript </option>
+        </select>
+    </div>
+        <button aria-label = "submits the information" type="submit">Submit</button>
+        <button aria-label = "resets the information" type="reset">Reset</button>
+    </form>
+
+    <!--Implement a set of radio buttons for users to indicate their level of expertise (beginner, intermediate, advanced).-->
+      <input type="radio" id="beginner" name="expertise-level" value="beginner" />
+      <label for="beginner">Beginner</label>
+
+      <input type="radio" id="intermediate" name="expertise-level" value="intermediate" />
+      <label for="intermediate">Intermediate</label>
+      
+      <input type="radio" id="Advanced" name="expertise-level" value="advanced" />
+      <label for="Advanced">Advanced</label>
+       <br>
+
+       <p> Preferred development platforms:</p>
+    <!-- Add checkboxes to let users select their preferred development platforms (web, mobile, desktop).-->
+     <input type="checkbox" id="web" name="Preferred-dev-platforms" value="web">
+     <label for="web">Web development</label><br>
+     
+     <input type="checkbox" id="mobile" name="Preferred-dev-platforms" value="mobile">
+     <label for="mobile">Mobile development</label><br>
+
+     <input type="checkbox" id="desktop" name="Preferred-dev-platforms">
+     <label for="desktop">Desktop development</label><br>
+
+     <button aria-label = "submits the information" type="submit">Submit</button>
+     <button aria-label = "resets the information" type="reset">Reset</button>
+    <form>
+</body>
+</html>
